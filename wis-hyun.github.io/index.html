@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sung Hyun Kim — AI Student · Future AI Researcher</title>
+<meta name="description" content="김성현 (Sung Hyun Kim) — AI engineering student at Sookmyung Women's University and research intern at SMU-NLP Lab. Interested in trustworthy AI: LLM evaluation, AI ethics &amp; safety, and agents.">
+<meta name="author" content="Sung Hyun Kim">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='30' fill='white'%3ESH%3C/text%3E%3C/svg%3E">
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sung Hyun Kim — AI Student · Future AI Researcher">
+<meta property="og:description" content="Trustworthy AI · LLM Evaluation · AI Ethics &amp; Safety · Agents — SMU-NLP Lab, Sookmyung Women's University.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Sung Hyun Kim","alternateName":"김성현","email":"mailto:smwuai2004@gmail.com","url":"https://wis-hyun.github.io/","sameAs":["https://github.com/wis-hyun","https://www.linkedin.com/in/%EC%84%B1%ED%98%84-%EA%B9%80-wishyun0303","https://velog.io/@wis-hyun/posts"],"affiliation":{"@type":"CollegeOrUniversity","name":"Sookmyung Women's University"},"jobTitle":"AI Student","knowsAbout":["Trustworthy AI","LLM Evaluation","AI Ethics and Safety","AI Agents","Large Language Models"]}
+</script>
+
+<style>
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS — white, minimal, refined
+───────────────────────────────────────────── */
+:root{
+  --bg:#ffffff; --bg-soft:#fafafa; --bg-mute:#f4f4f5;
+  --ink:#121212; --ink-2:#3f3f46; --ink-3:#71717a; --ink-4:#a1a1aa;
+  --line:#e9e9ec; --line-2:#d9d9de;
+  --accent:#1f3a93; --accent-ink:#ffffff; --accent-soft:#eef2ff;
+  --ok:#15803d; --ok-soft:#ecfdf5; --warn:#b45309; --warn-soft:#fffbeb;
+  --sans:'Inter','Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Noto Sans KR',sans-serif;
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r:14px; --r-s:8px; --r-l:22px;
+  --sh-1:0 1px 2px rgba(0,0,0,.04),0 1px 1px rgba(0,0,0,.02);
+  --sh-2:0 10px 30px -12px rgba(0,0,0,.14),0 2px 6px -2px rgba(0,0,0,.05);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --nav-h:64px; --max:1120px;
+}
+:root[data-theme="dark"]{
+  --bg:#0c0c0e; --bg-soft:#111114; --bg-mute:#17171b;
+  --ink:#f4f4f5; --ink-2:#d4d4d8; --ink-3:#a1a1aa; --ink-4:#71717a;
+  --line:#232329; --line-2:#2e2e36;
+  --accent:#a5b4fc; --accent-ink:#0c0c0e; --accent-soft:#1a1d33;
+  --ok:#4ade80; --ok-soft:#0f2a1a; --warn:#fbbf24; --warn-soft:#2a200a;
+  --sh-1:0 1px 2px rgba(0,0,0,.5); --sh-2:0 14px 40px -12px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+/* ───────────── Reset ───────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html:focus-within{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--ink);
+  line-height:1.7;font-size:16px;letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;transition:background .3s var(--ease),color .3s var(--ease);
+}
+body:lang(ko), [lang="ko"]{font-family:'Pretendard Variable',Pretendard,'Inter',-apple-system,system-ui,'Noto Sans KR',sans-serif;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::selection{background:var(--ink);color:var(--bg)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Language switching: elements carry data-ko / data-en, or .ko/.en blocks */
+[data-lang="ko"] .en,[data-lang="en"] .ko{display:none!important}
+
+.container{max-width:var(--max);margin:0 auto;padding:0 max(24px,env(safe-area-inset-left))}
+section{padding:112px 0}
+@media(max-width:760px){section{padding:72px 0}}
+
+/* ───────────── Progress bar ───────────── */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--ink);z-index:1000;transition:width .08s linear}
+
+/* ───────────── Nav ───────────── */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:900;
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+nav.scrolled{border-bottom-color:var(--line)}
+.nav-in{max-width:var(--max);margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--serif);font-size:1.45rem;letter-spacing:-.01em;display:flex;align-items:baseline;gap:6px}
+.brand i{font-style:italic;color:var(--ink-3)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:.86rem;font-weight:500;color:var(--ink-3);padding:8px 12px;border-radius:999px;transition:color .2s,background .2s;position:relative}
+.nav-links a:hover{color:var(--ink);background:var(--bg-mute)}
+.nav-links a.active{color:var(--ink)}
+.nav-links a.active::after{content:'';position:absolute;left:12px;right:12px;bottom:3px;height:1.5px;background:var(--ink);border-radius:2px}
+.nav-ctrl{display:flex;align-items:center;gap:6px}
+.pill-btn{height:34px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);background:var(--bg);transition:border-color .2s,background .2s,color .2s}
+.pill-btn:hover{border-color:var(--ink);color:var(--ink)}
+.pill-btn .seg{color:var(--ink-4)}
+.pill-btn .seg.on{color:var(--ink)}
+.icon-btn{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:var(--ink-2);background:var(--bg);transition:border-color .2s,color .2s}
+.icon-btn:hover{border-color:var(--ink);color:var(--ink)}
+.icon-btn svg{width:16px;height:16px}
+.burger{display:none}
+@media(max-width:860px){
+  .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;padding:12px 16px 18px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--sh-2)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 10px;font-size:1rem}
+  .nav-links a.active::after{display:none}
+  .burger{display:inline-flex}
+}
+
+/* ───────────── Section heading ───────────── */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--ink-4)}
+h2.title{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,2.9rem);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+h2.title em{font-style:italic;color:var(--ink-3)}
+.sec-note{color:var(--ink-3);font-size:.92rem;max-width:380px;line-height:1.6}
+
+/* ───────────── Hero ───────────── */
+#hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 48px) 0 72px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.35fr .8fr;gap:56px;align-items:center}
+.hero-kicker{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(21,128,61,.5);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(21,128,61,.45)}70%{box-shadow:0 0 0 9px rgba(21,128,61,0)}100%{box-shadow:0 0 0 0 rgba(21,128,61,0)}}
+h1.name{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,7.2vw,5.6rem);line-height:.98;letter-spacing:-.03em;margin-bottom:18px}
+h1.name em{font-style:italic;color:var(--ink-3)}
+.name-ko{font-size:1.05rem;color:var(--ink-3);letter-spacing:.06em;margin-bottom:26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.name-ko .sep{width:1px;height:14px;background:var(--line-2)}
+.name-ko code{font-family:var(--mono);font-size:.82rem;color:var(--ink-2);background:var(--bg-mute);padding:2px 8px;border-radius:6px}
+.hero-line{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-2);line-height:1.55;min-height:2em;margin-bottom:28px}
+.hero-line .tw{color:var(--ink);font-weight:500;border-bottom:1.5px solid var(--ink);padding-bottom:1px}
+.caret{display:inline-block;width:1.5px;height:1.05em;background:var(--ink);margin-left:3px;vertical-align:-2px;animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-desc{max-width:560px;color:var(--ink-3);font-size:1rem;line-height:1.8;margin-bottom:36px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:999px;font-size:.9rem;font-weight:600;border:1px solid var(--ink);transition:transform .25s var(--ease),background .2s,color .2s,box-shadow .25s}
+.btn svg{width:15px;height:15px}
+.btn-solid{background:var(--ink);color:var(--bg)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:var(--sh-2)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--bg-mute);transform:translateY(-2px)}
+.hero-links{display:flex;flex-wrap:wrap;gap:18px}
+.hero-links a{font-size:.86rem;color:var(--ink-3);display:inline-flex;align-items:center;gap:7px;transition:color .2s}
+.hero-links a:hover{color:var(--ink)}
+.hero-links svg{width:15px;height:15px}
+.hero-links a span{border-bottom:1px solid transparent;transition:border-color .2s}
+.hero-links a:hover span{border-bottom-color:var(--ink)}
+
+/* portrait */
+.portrait{position:relative;justify-self:end;width:min(100%,320px)}
+.portrait-frame{position:relative;border-radius:var(--r-l);overflow:hidden;aspect-ratio:4/5;background:var(--bg-mute);box-shadow:var(--sh-2);transform:rotate(1.2deg);transition:transform .8s var(--ease)}
+.portrait:hover .portrait-frame{transform:rotate(0)}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.portrait::before{content:'';position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--line-2);border-radius:var(--r-l);z-index:-1}
+.portrait-tag{position:absolute;left:-18px;bottom:28px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:var(--sh-2);font-size:.78rem;line-height:1.35}
+.portrait-tag b{display:block;font-weight:600;font-size:.84rem}
+.portrait-tag span{color:var(--ink-3)}
+.scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-4);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint::after{content:'';width:1px;height:38px;background:linear-gradient(var(--ink-4),transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .portrait{justify-self:start;width:min(56%,240px);order:-1}
+  .portrait-tag{left:auto;right:-12px}
+  #hero{min-height:auto;padding-top:calc(var(--nav-h) + 36px)}
+  .scroll-hint{display:none}
+}
+
+/* ───────────── Marquee ───────────── */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:16px 0;background:var(--bg-soft)}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 42s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);display:inline-flex;align-items:center;gap:48px;white-space:nowrap}
+.marquee-track span::after{content:'✦';color:var(--ink-4);font-size:.6rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ───────────── About ───────────── */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:start}
+.lead{font-family:var(--serif);font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.4;letter-spacing:-.01em;color:var(--ink);margin-bottom:28px;text-wrap:pretty}
+.lead em{font-style:italic;color:var(--ink-3)}
+.about-p{color:var(--ink-2);line-height:1.85;margin-bottom:16px;max-width:620px}
+.int-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-top:28px}
+.int{border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.88rem;font-weight:500;display:flex;align-items:center;gap:10px;transition:border-color .2s,transform .3s var(--ease),background .2s;background:var(--bg)}
+.int:hover{border-color:var(--ink);transform:translateY(-2px)}
+.int i{font-style:normal;font-family:var(--mono);font-size:.68rem;color:var(--ink-4);min-width:20px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.stat{background:var(--bg);padding:26px 22px}
+.stat .n{font-family:var(--serif);font-size:2.6rem;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .n small{font-size:1.1rem;color:var(--ink-4);margin-left:3px}
+.stat .l{font-size:.8rem;color:var(--ink-3);margin-top:8px;line-height:1.4}
+.quote{margin-top:16px;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;background:var(--bg-soft)}
+.quote p{font-family:var(--serif);font-size:1.12rem;line-height:1.5;font-style:italic;color:var(--ink-2)}
+.quote small{display:block;margin-top:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4)}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ───────────── Education ───────────── */
+.edu{border:1px solid var(--line);border-radius:var(--r-l);padding:36px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;background:var(--bg);box-shadow:var(--sh-1)}
+.edu-badge{width:64px;height:64px;border-radius:18px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.5rem;font-style:italic}
+.edu h3{font-size:1.3rem;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
+.edu .deg{color:var(--ink-2);margin-bottom:14px}
+.edu-tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:.76rem;font-weight:500;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);background:var(--bg)}
+.tag.hi{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.edu-gpa{text-align:right}
+.edu-gpa .n{font-family:var(--serif);font-size:3rem;line-height:1;letter-spacing:-.02em}
+.edu-gpa .n small{font-size:1.1rem;color:var(--ink-4)}
+.edu-gpa .l{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);margin-top:6px}
+.gpa-bar{height:4px;background:var(--bg-mute);border-radius:4px;margin-top:12px;overflow:hidden}
+.gpa-bar i{display:block;height:100%;width:0;background:var(--ink);border-radius:4px;transition:width 1.4s var(--ease)}
+@media(max-width:760px){.edu{grid-template-columns:1fr;padding:28px 24px;gap:20px}.edu-gpa{text-align:left}}
+
+/* ───────────── Experience (timeline) ───────────── */
+.tl{position:relative}
+.tl::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--line-2)}
+.tl-item{position:relative;padding-left:44px;margin-bottom:12px}
+.tl-item::before{content:'';position:absolute;left:3px;top:30px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1.5px solid var(--ink-4);transition:background .2s,border-color .2s,transform .3s}
+.tl-item.open::before,.tl-item:hover::before{background:var(--ink);border-color:var(--ink);transform:scale(1.25)}
+.tl-card{border:1px solid var(--line);border-radius:var(--r);background:var(--bg);transition:border-color .25s,box-shadow .3s}
+.tl-card:hover{border-color:var(--line-2);box-shadow:var(--sh-2)}
+.tl-head{width:100%;text-align:left;padding:22px 24px;display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center}
+.tl-head .org{font-size:1.02rem;font-weight:600;letter-spacing:-.01em}
+.tl-head .role{color:var(--ink-3);font-size:.9rem;margin-top:2px}
+.tl-head .period{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);white-space:nowrap;letter-spacing:.02em}
+.tl-head .chev{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease),background .2s,color .2s}
+.tl-head .chev svg{width:14px;height:14px}
+.tl-item.open .chev{transform:rotate(180deg);background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tl-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.tl-item.open .tl-body{grid-template-rows:1fr}
+.tl-body>div{overflow:hidden}
+.tl-in{padding:0 24px 24px;border-top:1px solid var(--line);padding-top:20px;display:grid;grid-template-columns:1.3fr .9fr;gap:28px}
+.tl-in ul{display:flex;flex-direction:column;gap:9px}
+.tl-in li{position:relative;padding-left:16px;color:var(--ink-2);font-size:.92rem;line-height:1.65}
+.tl-in li::before{content:'';position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--ink-4)}
+.takeaway{margin-top:18px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:.86rem;color:var(--ink-2);line-height:1.6}
+.takeaway b{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);margin-bottom:6px;font-weight:500}
+.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;align-content:start}
+.gal button{aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--bg-mute);position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease),filter .4s}
+.gal button:hover img{transform:scale(1.06)}
+.gal button::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);border-radius:10px}
+.gal .more{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.78rem;color:var(--ink-3);background:var(--bg-soft);border:1px dashed var(--line-2)}
+@media(max-width:760px){
+  .tl-head{grid-template-columns:1fr auto;padding:18px}
+  .tl-head .period{grid-column:1;grid-row:2;margin-top:4px}
+  .tl-head .chev{grid-row:1/3}
+  .tl-in{grid-template-columns:1fr;padding:18px}
+  .gal{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ───────────── Projects ───────────── */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filter{height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-size:.84rem;font-weight:500;color:var(--ink-3);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.filter:hover{border-color:var(--ink);color:var(--ink)}
+.filter.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.filter .c{font-family:var(--mono);font-size:.68rem;opacity:.7}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.proj{border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 22px;background:var(--bg);display:flex;flex-direction:column;gap:12px;position:relative;transition:transform .35s var(--ease),box-shadow .35s,border-color .25s,opacity .3s;animation:fadeUp .5s var(--ease) both}
+.proj:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--line-2)}
+.proj.hide{display:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.proj-num{font-family:var(--mono);font-size:.7rem;color:var(--ink-4);letter-spacing:.1em}
+.status{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:5px}
+.status::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+.status.done{background:var(--ok-soft);color:var(--ok)}
+.status.wip{background:var(--warn-soft);color:var(--warn)}
+.proj h3{font-size:1.06rem;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+.proj p{color:var(--ink-3);font-size:.9rem;line-height:1.7;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px}
+.proj-tags span{font-family:var(--mono);font-size:.68rem;color:var(--ink-3);background:var(--bg-mute);padding:3px 8px;border-radius:6px}
+.proj-link{margin-top:6px;font-size:.84rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;color:var(--ink);width:fit-content}
+.proj-link svg{width:13px;height:13px;transition:transform .25s}
+.proj-link:hover svg{transform:translate(2px,-2px)}
+.proj-link span{border-bottom:1px solid var(--line-2);transition:border-color .2s}
+.proj-link:hover span{border-bottom-color:var(--ink)}
+
+/* ───────────── Awards & certs ───────────── */
+.aw-list{border-top:1px solid var(--line)}
+.aw{display:grid;grid-template-columns:52px 1fr auto;gap:20px;align-items:center;padding:20px 6px;border-bottom:1px solid var(--line);transition:background .2s,padding .3s var(--ease)}
+.aw:hover{background:var(--bg-soft);padding-left:14px}
+.aw .medal{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:1.1rem;border:1px solid var(--line-2);color:var(--ink-2);background:var(--bg)}
+.aw .medal.g{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.aw .t{font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.aw .o{color:var(--ink-3);font-size:.86rem;margin-top:1px}
+.aw .d{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);white-space:nowrap}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:20px}
+.cert{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;display:flex;flex-direction:column;gap:10px;background:var(--bg);transition:transform .3s var(--ease),box-shadow .3s,border-color .25s}
+.cert:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:var(--line-2)}
+.cert .ci{width:fit-content;min-width:40px;height:40px;padding:0 12px;white-space:nowrap;border-radius:10px;background:var(--bg-mute);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--ink-2);letter-spacing:.02em}
+.cert .cn{font-weight:600;font-size:.94rem;line-height:1.35;letter-spacing:-.01em}
+.cert .cm{display:flex;justify-content:space-between;align-items:center;color:var(--ink-3);font-size:.78rem;margin-top:auto}
+.cert .cm code{font-family:var(--mono);font-size:.7rem}
+.sub-head{margin:56px 0 0;display:flex;align-items:center;gap:16px}
+.sub-head h3{font-family:var(--serif);font-weight:400;font-size:1.6rem;letter-spacing:-.01em}
+.sub-head::after{content:'';flex:1;height:1px;background:var(--line)}
+@media(max-width:600px){.aw{grid-template-columns:44px 1fr}.aw .d{grid-column:2}}
+
+/* ───────────── Skills ───────────── */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden}
+.skill{background:var(--bg);padding:30px 28px}
+.skill h3{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);font-weight:500;margin-bottom:18px}
+.skill ul{display:flex;flex-direction:column;gap:10px}
+.skill li{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.92rem;font-weight:500}
+.lvl{display:flex;gap:3px}
+.lvl i{width:16px;height:4px;border-radius:2px;background:var(--line-2)}
+.lvl i.on{background:var(--ink)}
+.skill .chips{display:flex;flex-wrap:wrap;gap:6px}
+.skill .chips span{font-size:.82rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);transition:border-color .2s,background .2s}
+.skill .chips span:hover{border-color:var(--ink);background:var(--bg-soft)}
+
+/* ───────────── Contact ───────────── */
+#contact .wrap{border:1px solid var(--line);border-radius:28px;padding:72px 48px;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
+#contact .wrap::before{content:'';position:absolute;inset:auto -20% -60% -20%;height:70%;background:radial-gradient(ellipse at center,var(--bg-mute),transparent 70%);pointer-events:none}
+#contact .wrap>*{position:relative}
+#contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:16px;text-wrap:balance}
+#contact h2 em{font-style:italic;color:var(--ink-3)}
+#contact p{color:var(--ink-3);max-width:520px;margin:0 auto 34px;line-height:1.75}
+.mail{display:inline-flex;align-items:center;gap:0;border:1px solid var(--line-2);border-radius:999px;overflow:hidden;margin-bottom:28px;background:var(--bg)}
+.mail a{font-family:var(--mono);font-size:.9rem;padding:13px 20px;color:var(--ink);transition:background .2s}
+.mail a:hover{background:var(--bg-soft)}
+.mail button{padding:13px 16px;border-left:1px solid var(--line-2);font-size:.78rem;font-weight:600;color:var(--ink-2);display:inline-flex;align-items:center;gap:6px;transition:background .2s,color .2s}
+.mail button:hover{background:var(--ink);color:var(--bg)}
+.mail button svg{width:13px;height:13px}
+.c-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.c-links a{height:42px;padding:0 18px;border:1px solid var(--line);border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:500;color:var(--ink-2);transition:all .25s var(--ease)}
+.c-links a:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px)}
+.c-links svg{width:15px;height:15px}
+@media(max-width:600px){#contact .wrap{padding:52px 22px}.mail{flex-direction:column;border-radius:16px}.mail button{border-left:0;border-top:1px solid var(--line-2);width:100%;justify-content:center}}
+
+/* ───────────── Footer ───────────── */
+footer{border-top:1px solid var(--line);padding:34px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--ink-3)}
+.foot .brand{font-size:1.2rem}
+.foot code{font-family:var(--mono);font-size:.72rem}
+
+/* ───────────── Toast / back-to-top / lightbox ───────────── */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-size:.84rem;font-weight:500;opacity:0;pointer-events:none;transition:all .35s var(--ease);z-index:1100;box-shadow:var(--sh-2)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+#top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--bg);border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:all .3s var(--ease);z-index:800;box-shadow:var(--sh-2)}
+#top.show{opacity:1;pointer-events:auto;transform:none}
+#top:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#top svg{width:16px;height:16px}
+.lb{position:fixed;inset:0;background:rgba(10,10,12,.92);z-index:1200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)}
+.lb.open{opacity:1;pointer-events:auto}
+.lb img{max-width:min(92vw,1100px);max-height:84vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:scale(.96);transition:transform .35s var(--ease)}
+.lb.open img{transform:none}
+.lb .cap{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#d4d4d8;font-size:.82rem;font-family:var(--mono);letter-spacing:.04em;white-space:nowrap}
+.lb button{position:absolute;color:#fff;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb button:hover{background:rgba(255,255,255,.2)}
+.lb button svg{width:20px;height:20px}
+.lb .x{top:20px;right:20px}
+.lb .prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb .next{right:16px;top:50%;transform:translateY(-50%)}
+@media(max-width:600px){.lb .prev,.lb .next{top:auto;bottom:60px;transform:none}}
+
+/* ───────────── Project modal ───────────── */
+.proj-emo{font-size:1.6rem;line-height:1;margin-top:-2px}
+.proj-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:4px}
+.proj-link.sub{color:var(--ink-3);font-weight:500}
+.pm{position:fixed;inset:0;z-index:1150;background:rgba(18,18,18,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+@media(min-width:720px){.pm{align-items:center;padding:24px}}
+.pm.open{opacity:1;pointer-events:auto}
+.pm-card{position:relative;background:var(--bg);width:100%;max-width:860px;max-height:92vh;overflow:auto;border-radius:24px 24px 0 0;padding:40px 36px 36px;box-shadow:0 40px 100px rgba(0,0,0,.35);transform:translateY(24px);transition:transform .45s var(--ease);overscroll-behavior:contain}
+@media(min-width:720px){.pm-card{border-radius:24px;padding:48px 52px}}
+.pm.open .pm-card{transform:none}
+.pm-x{position:sticky;top:0;float:right;margin:-12px -12px 0 0;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s,color .2s}
+.pm-x:hover{background:var(--ink);color:var(--bg)}
+.pm-x svg{width:16px;height:16px}
+.pm-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:18px}
+.pm-emo{font-size:2.2rem;line-height:1;width:64px;height:64px;border-radius:18px;background:var(--bg-mute);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.pm-head h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:10px}
+.pm-lead{color:var(--ink-2);line-height:1.7;font-size:.96rem}
+.pm-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 26px}
+.pm-tags span{font-family:var(--mono);font-size:.7rem;color:var(--ink-2);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.pm-sec{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:14px;background:var(--bg)}
+.pm-grid .pm-sec{margin-bottom:0}
+.pm-sec h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);font-weight:500;margin-bottom:10px}
+.pm-sec p{color:var(--ink-2);font-size:.92rem;line-height:1.75}
+.pm-sec ul{display:flex;flex-direction:column;gap:8px}
+.pm-sec li{position:relative;padding-left:18px;color:var(--ink-2);font-size:.92rem;line-height:1.65}
+.pm-sec li::before{content:'';position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.pm-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.pm-links .btn{height:42px;padding:0 18px;font-size:.84rem}
+@media(max-width:720px){.pm-grid{grid-template-columns:1fr}.pm-head{flex-direction:column;gap:14px}}
+
+/* ───────────── Reveal ───────────── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* ───────────── Print ───────────── */
+@media print{
+  nav,#progress,#top,.scroll-hint,.marquee,.toast,.lb,.chev,.gal{display:none!important}
+  body{color:#000}section{padding:28px 0;break-inside:avoid}
+  .tl-body{grid-template-rows:1fr!important}.rv{opacity:1;transform:none}
+  #hero{min-height:auto;padding-top:20px}
+}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ───────────── NAV ───────────── -->
+<nav id="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a href="#hero" class="brand" aria-label="Home">Sung Hyun<i>Kim.</i></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-ko="소개" data-en="About">About</a>
+      <a href="#education" data-ko="학력" data-en="Education">Education</a>
+      <a href="#experience" data-ko="경험" data-en="Experience">Experience</a>
+      <a href="#projects" data-ko="프로젝트" data-en="Projects">Projects</a>
+      <a href="#awards" data-ko="수상·자격" data-en="Awards">Awards</a>
+      <a href="#skills" data-ko="스킬" data-en="Skills">Skills</a>
+      <a href="#contact" data-ko="연락" data-en="Contact">Contact</a>
+    </div>
+    <div class="nav-ctrl">
+      <button class="pill-btn" id="langBtn" aria-label="Switch language"><span class="seg" data-l="ko">KO</span><span style="color:var(--line-2)">/</span><span class="seg" data-l="en">EN</span></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────────── HERO ───────────── -->
+<section id="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-kicker"><span class="dot"></span><span class="ko">SMU-NLP Lab 연구 인턴 · LLM 평가 연구 중</span><span class="en">Research intern @ SMU-NLP Lab · working on LLM evaluation</span></div>
+      <h1 class="name">Sung Hyun<br><em>Kim.</em></h1>
+      <div class="name-ko">
+        <span>김성현</span><span class="sep"></span>
+        <span class="ko">AI 학생 · 연구실 인턴</span><span class="en">AI Student · Research Intern</span>
+        <span class="sep"></span><code>@wis-hyun</code>
+      </div>
+      <p class="hero-line"><span class="ko">저는 </span><span class="en">I build </span><span class="tw" id="tw"></span><span class="caret" aria-hidden="true"></span><span class="ko">을 만듭니다.</span></p>
+      <p class="hero-desc">
+        <span class="ko">숙명여자대학교 인공지능공학부 학생이자 SMU-NLP 연구실 인턴입니다. <strong>신뢰할 수 있는 AI</strong>를 만드는 일 — 특히 LLM의 <strong>평가</strong>와 <strong>윤리·안전</strong>, 그리고 <strong>에이전트</strong>에 관심이 있습니다.</span>
+        <span class="en">An AI engineering student at Sookmyung Women's University and a research intern at SMU-NLP Lab. I want to make AI we can <strong>trust</strong> — with a focus on <strong>LLM evaluation</strong>, <strong>ethics &amp; safety</strong>, and <strong>AI agents</strong>.</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-solid"><span class="ko">프로젝트 보기</span><span class="en">View Projects</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#contact" class="btn btn-line"><span class="ko">연락하기</span><span class="en">Get in touch</span></a>
+      </div>
+      <div class="hero-links">
+        <a href="https://github.com/wis-hyun" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg><span>GitHub</span></a>
+        <a href="https://www.linkedin.com/in/%EC%84%B1%ED%98%84-%EA%B9%80-wishyun0303" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V9h3zM6.5 7.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zM19 19h-3v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6V19h-3V9h2.9v1.4a3.2 3.2 0 0 1 2.9-1.6c3 0 3.6 2 3.6 4.6z"/></svg><span>LinkedIn</span></a>
+        <a href="https://velog.io/@wis-hyun/posts" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><span>Blog</span></a>
+        <a href="mailto:smwuai2004@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Email</span></a>
+      </div>
+    </div>
+    <div class="portrait rv">
+      <div class="portrait-frame"><img src="assets/profile.jpg" alt="Sung Hyun Kim portrait" width="900" height="1250" fetchpriority="high"></div>
+      <div class="portrait-tag"><b>Sookmyung Women's Univ.</b><span class="ko">인공지능공학부 · SMU-NLP Lab</span><span class="en">AI Engineering · SMU-NLP Lab</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll</div>
+</section>
+
+<!-- ───────────── MARQUEE ───────────── -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+<!-- ───────────── ABOUT ───────────── -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head rv">
+      <div><div class="eyebrow">01 — About</div><h2 class="title"><span class="ko">사람이 <em>신뢰할 수 있는</em><br>인공지능을 만들고 싶습니다.</span><span class="en">Building AI that people<br>can actually <em>trust</em>.</span></h2></div>
+      <p class="sec-note"><span class="ko">LLM 평가를 연구하는 SMU-NLP 연구실에서 연구자의 길을 시작한 기록입니다.</span><span class="en">Notes from the start of a research path at SMU-NLP Lab, where I work on LLM evaluation.</span></p>
+    </div>
+    <div class="about-grid">
+      <div class="rv">
+        <p class="lead"><span class="ko">모델이 얼마나 잘하는지보다, 그 결과를 <em>얼마나 믿을 수 있는지</em>를 묻습니다 — 평가, 윤리, 그리고 에이전트.</span><span class="en">Less "how well does the model perform" and more <em>"how far can we trust it"</em> — evaluation, ethics, and agents.</span></p>
+        <p class="about-p"><span class="ko">저는 인공지능을 사람이 신뢰할 수 있는 기술로 만드는 일에 관심이 있는 AI 학생입니다. 관심은 LLM을 어떻게 제대로 평가할 것인가(Evaluation &amp; Benchmarking), 모델이 안전하고 윤리적으로 행동하게 하려면 무엇이 필요한가(AI Ethics &amp; Safety), 그리고 스스로 판단하고 행동하는 에이전트(AI Agents)로 모이고 있습니다. 다양한 프로젝트와 협업 경험을 통해 연구와 실제 응용을 잇고자 합니다.</span><span class="en">I am an AI student who wants to turn AI into technology people can trust. My interests are converging on how to evaluate LLMs properly (evaluation &amp; benchmarking), what it takes for models to behave safely and ethically (AI ethics &amp; safety), and agents that reason and act on their own. Through hands-on projects and collaborative experiences, I aim to bridge research and real-world applications.</span></p>
+        <p class="about-p"><span class="ko">2026년 10월부터 숙명여자대학교 자연어처리 연구실 <a href="https://nlplab-sookmyung.github.io/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line-2)">SMU-NLP Lab</a>(문현석 교수님)에서 연구 인턴으로 LLM 평가 연구에 참여하고 있습니다.</span><span class="en">Since October 2026 I have been a research intern at <a href="https://nlplab-sookmyung.github.io/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line-2)">SMU-NLP Lab</a> (Prof. Hyeonseok Moon), Sookmyung Women's University, working on LLM evaluation research.</span></p>
+        <div class="eyebrow" style="margin-top:34px">Research interests</div>
+        <div class="int-grid" id="interests"></div>
+      </div>
+      <div class="rv d1">
+        <div class="stats" id="stats"></div>
+        <div class="quote"><p><span class="ko">"똑똑한 AI보다, 믿을 수 있는 AI. 그 기준을 만드는 사람이 되고 싶습니다."</span><span class="en">"Not just smarter AI — AI we can trust. I want to help build the standards that make it so."</span></p><small>— Sung Hyun Kim</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── EDUCATION ───────────── -->
+<section id="education" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="sec-head rv"><div><div class="eyebrow">02 — Education</div><h2 class="title"><span class="ko">학력</span><span class="en">Education</span></h2></div></div>
+    <div class="edu rv d1">
+      <div class="edu-badge">S</div>
+      <div>
+        <h3><span class="ko">숙명여자대학교</span><span class="en">Sookmyung Women's University</span></h3>
+        <div class="deg"><span class="ko">인공지능공학부 학사 (B.S. in Artificial Intelligence Engineering)</span><span class="en">B.S. in Artificial Intelligence Engineering</span></div>
+        <div class="edu-tags">
+          <span class="tag hi"><span class="ko">상위 3%</span><span class="en">Top 3%</span></span>
+          <span class="tag"><span class="ko">부전공 · 빅데이터 (GPA 4.27 / 4.5)</span><span class="en">Minor · Big Data (GPA 4.27 / 4.5)</span></span>
+          <span class="tag"><span class="ko">SMU-NLP Lab 연구 인턴 (2026.10 ~)</span><span class="en">Research Intern @ SMU-NLP Lab (2026.10 ~)</span></span>
+        </div>
+      </div>
+      <div class="edu-gpa">
+        <div class="n">4.26<small>/4.5</small></div>
+        <div class="l">Major GPA</div>
+        <div class="gpa-bar"><i id="gpaBar" data-w="94.7"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── EXPERIENCE ───────────── -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-head rv">
+      <div><div class="eyebrow">03 — Experience</div><h2 class="title"><span class="ko">경험이 쌓여<br><em>방향</em>이 됩니다.</span><span class="en">Experiences that<br>became a <em>direction</em>.</span></h2></div>
+      <p class="sec-note"><span class="ko">항목을 누르면 상세 내용과 현장 사진을 볼 수 있어요.</span><span class="en">Tap an item to see details and photos from the field.</span></p>
+    </div>
+    <div class="tl rv d1" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ───────────── PROJECTS ───────────── -->
+<section id="projects" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="sec-head rv">
+      <div><div class="eyebrow">04 — Projects</div><h2 class="title"><span class="ko">만들며 <em>배운</em> 것들</span><span class="en">Things I <em>learned</em> by building</span></h2></div>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="proj-grid rv d1" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- ───────────── AWARDS ───────────── -->
+<section id="awards">
+  <div class="container">
+    <div class="sec-head rv"><div><div class="eyebrow">05 — Awards &amp; Certifications</div><h2 class="title"><span class="ko">수상 <em>&amp;</em> 자격</span><span class="en">Awards <em>&amp;</em> Certifications</span></h2></div></div>
+    <div class="aw-list rv d1" id="awList"></div>
+    <div class="sub-head rv"><h3><span class="ko">자격증</span><span class="en">Certifications</span></h3></div>
+    <div class="cert-grid rv d1" id="certGrid"></div>
+  </div>
+</section>
+
+<!-- ───────────── SKILLS ───────────── -->
+<section id="skills" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="sec-head rv"><div><div class="eyebrow">06 — Skills</div><h2 class="title"><span class="ko">도구와 <em>강점</em></span><span class="en">Tools <em>&amp;</em> strengths</span></h2></div></div>
+    <div class="skill-grid rv d1" id="skillGrid"></div>
+  </div>
+</section>
+
+<!-- ───────────── CONTACT ───────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="wrap rv">
+      <div class="eyebrow" style="justify-content:center">07 — Contact</div>
+      <h2><span class="ko">함께 <em>성장</em>해요.</span><span class="en">Let's <em>grow</em> together.</span></h2>
+      <p><span class="ko">AI 연구, 프로젝트 협업, 멘토링, 대학원 관련 이야기 — 어떤 연락이든 환영합니다.</span><span class="en">AI research, project collaboration, mentoring, or graduate-school talk — every message is welcome.</span></p>
+      <div class="mail">
+        <a href="mailto:smwuai2004@gmail.com">smwuai2004@gmail.com</a>
+        <button id="copyMail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="ko">복사</span><span class="en">Copy</span></button>
+      </div>
+      <div class="c-links">
+        <a href="https://github.com/wis-hyun" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
+        <a href="https://www.linkedin.com/in/%EC%84%B1%ED%98%84-%EA%B9%80-wishyun0303" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V9h3zM6.5 7.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zM19 19h-3v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6V19h-3V9h2.9v1.4a3.2 3.2 0 0 1 2.9-1.6c3 0 3.6 2 3.6 4.6z"/></svg>LinkedIn</a>
+        <a href="https://velog.io/@wis-hyun/posts" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Velog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <a href="#hero" class="brand">Sung Hyun<i>Kim.</i></a>
+    <div><span class="ko">© 2026 김성현 · 숙명여자대학교 인공지능공학부</span><span class="en">© 2026 Sung Hyun Kim · Sookmyung Women's University</span></div>
+    <code>last updated <span id="updated"></span></code>
+  </div>
+</footer>
+
+<button id="top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="toast" id="toast" role="status"></div>
+<div class="pm" id="pm" role="dialog" aria-modal="true" aria-label="Project details">
+  <div class="pm-card">
+    <button class="pm-x" id="pmX" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div id="pmBody"></div>
+  </div>
+</div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="x" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <img id="lbImg" alt="">
+  <button class="next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="cap" id="lbCap"></div>
+</div>
+
+<script>
+/* =====================================================================
+   ✏️  DATA — 여기만 수정하면 사이트 내용이 바뀝니다. (ko / en 두 언어)
+   ===================================================================== */
+const DATA = {
+  roles: {
+    ko: ["신뢰할 수 있는 인공지능","LLM을 제대로 평가하는 방법","안전하고 윤리적인 AI 시스템","스스로 판단하고 행동하는 에이전트"],
+    en: ["AI that people can trust","better ways to evaluate LLMs","safe and ethical AI systems","agents that reason and act on their own"]
+  },
+  marquee: ["Trustworthy AI","LLM Evaluation","Benchmarking","AI Ethics & Safety","AI Agents","Large Language Models","PyTorch","SMU-NLP Lab","Sookmyung Women's University"],
+  interests: [
+    {n:"Trustworthy AI",k:"01"},{n:"LLM Evaluation & Benchmarking",k:"02"},{n:"AI Ethics & Safety",k:"03"},
+    {n:"AI Agents",k:"04"},{n:"Large Language Models",k:"05"},{n:"Multimodal AI",k:"06"}
+  ],
+  stats: [
+    {n:4.26,dec:2,suf:"/4.5",ko:"전공 평점",en:"Major GPA"},
+    {n:3,pre:"Top ",suf:"%",ko:"학과 석차",en:"Academic standing"},
+    {n:5,suf:"",ko:"수상 (2위 ×4, 3위 ×1)",en:"Awards (4× 2nd, 1× 3rd)"},
+    {n:10,suf:"+",ko:"프로젝트 · 4 자격증",en:"Projects · 4 certifications"}
+  ],
+  experience: [
+    {
+      org:{ko:"SMU-NLP Lab · 숙명여자대학교",en:"SMU-NLP Lab · Sookmyung Women's University"},
+      role:{ko:"연구 인턴 (지도교수: 문현석 교수님)",en:"Research Intern (Advisor: Prof. Hyeonseok Moon)"},
+      period:"2026.10 — Present",
+      bullets:{
+        ko:["숙명여자대학교 자연어처리 연구실(SMU-NLP Lab)에서 연구 인턴으로 활동 중","LLM 평가(Evaluation)·벤치마킹을 주제로 연구 참여","AI 에이전트, 데이터·모델 평가, 리소스 구축을 다루는 연구실에서 신뢰할 수 있는 평가 방법을 공부"],
+        en:["Research intern at the Natural Language Processing Lab (SMU-NLP), Sookmyung Women's University","Participating in research on LLM evaluation and benchmarking","Studying trustworthy evaluation methods in a lab that works on AI agents, data & model evaluation, and resource construction"]
+      },
+      take:{ko:"신뢰할 수 있는 AI를 향한 연구의 출발점 — 평가 방법론과 연구 과정을 배우는 중",en:"The starting point of my research path toward trustworthy AI — learning evaluation methodology and how research is done"},
+      tags:["LLM Evaluation","Benchmarking","Research"], photos:[],
+      link:{l:"nlplab-sookmyung.github.io",u:"https://nlplab-sookmyung.github.io/"}
+    },
+    {
+      org:{ko:"University of the Nations — DTS",en:"University of the Nations — DTS"},
+      role:{ko:"Discipleship Training School · 하와이",en:"Discipleship Training School · Hawaii"},
+      period:"2026.04 — 2026.09",
+      bullets:{
+        ko:["하와이에서 진행된 DTS 훈련 프로그램에 참여, 전 세계에서 온 사람들과 소통하며 생활","호주·미국 출신 룸메이트와 3개월간 기숙사 생활, 이후 9명의 외국인 친구들과 2개월간 공동 생활","낯선 환경에서 새로운 문화를 익히며 개인주의적 문화와 한국의 정(情) 문화의 차이를 직접 경험"],
+        en:["Joined the DTS training program in Hawaii, living and communicating with people from around the world","Shared a dorm with roommates from Australia and the US for three months, then lived with nine international friends for two more","Learned a new culture first-hand and experienced the contrast between individualist and Korean community-oriented cultures"]
+      },
+      take:{ko:"영어 커뮤니케이션 능력, 글로벌 시야, 문화적 차이를 극복하는 경험",en:"English communication, a global perspective, and experience bridging cultural differences"},
+      tags:["Global","Communication","English"], photos:[]
+    },
+    {
+      org:{ko:"서울대학교 빅데이터연구원",en:"Seoul National University Big-Data Institute"},
+      role:{ko:"학생 인턴 (원격)",en:"Student Intern (remote)"},
+      period:"2025.12 — 2026.01",
+      bullets:{
+        ko:["원격 환경에서 대형 언어 모델(LLM)의 프롬프트 기반 평가 수행","NLP · 컴퓨터 비전 · 데이터 분석 등 전공 수업을 바탕으로 모델 응답을 검증할 질문 세트 설계","여러 모델의 출력을 비교·검토하여 성능 차이 분석","평가 결과를 정리하고 결과 문서화 지원"],
+        en:["Worked on prompt-based evaluation of large language models in a remote setting","Designed question sets based on coursework (NLP, computer vision, data analysis) to test model responses","Reviewed and compared outputs across models to analyze performance differences","Organized evaluation results and assisted in documenting findings"]
+      },
+      take:{ko:"실제 평가 과제를 통해 핵심 AI 개념의 이해를 강화하고, AI 모델 성능을 분석·비교하는 경험을 쌓음",en:"Strengthened understanding of core AI concepts through practical evaluation tasks; gained experience analyzing and comparing model performance"},
+      tags:["LLM Evaluation","Prompting","Multi-LLM Review"], photos:["snu_1","snu_2","snu_0"]
+    },
+    {
+      org:{ko:"빅데이터 산업진흥 서포터즈",en:"Big-Data Industry Supporter"},
+      role:{ko:"서포터즈",en:"Supporter"},
+      period:"2025.04 — 2026.02",
+      bullets:{
+        ko:["데이터 리터러시 확산을 위한 데이터 기반 홍보 프로그램 기획·실행","사용자 행동을 이해하고 참여도를 높이기 위한 설문 설계 및 분석","리포트·카드뉴스 등 데이터 기반 콘텐츠 제작으로 인사이트를 쉽게 전달","현장 행사 운영 지원 및 참가자 응대"],
+        en:["Planned and executed data-driven outreach programs to promote data literacy","Designed and analyzed surveys to understand user behavior and improve engagement","Created data-based content (reports, card news) to communicate insights clearly","Supported on-site events and managed participant interactions"]
+      },
+      take:{ko:"다양한 대상과 소통하는 능력, 데이터 인사이트를 쉬운 콘텐츠로 옮기는 경험, 실제 프로그램을 운영하는 실행력",en:"Communication across diverse audiences, translating data insights into accessible content, and running real-world programs"},
+      tags:["Data Literacy","Survey Analysis","Content"], photos:["IMG_5638","IMG_5119","IMG_3541","IMG_6795"]
+    },
+    {
+      org:{ko:"OUTSTANDERS × 스타트업 산학협력",en:"OUTSTANDERS — Industry-Academic Project"},
+      role:{ko:"프로젝트 인턴 · 2위 수상",en:"Project Intern · 2nd Place"},
+      period:"2025.09 — 2025.12",
+      bullets:{
+        ko:["스타트업과 함께하는 산학협력 프로젝트에 참여","컴퓨터 비전 기반 데이터 수집 및 크롤링 기법 탐구","프로젝트 전 과정에서 실험을 수행하고 결과를 문서화","기업 CTO와 소통하며 아이디어와 접근 방식을 구체화"],
+        en:["Participated in an industry-academic collaboration project with a startup","Explored computer vision-based data collection and crawling techniques","Conducted experiments and documented results throughout the project","Communicated with the company's CTO to refine ideas and approaches"]
+      },
+      take:{ko:"실험적 문제 해결, 기술 실험을 기록하고 반복 개선하는 방법, 현업 전문가와의 협업 경험",en:"Hands-on experimental problem-solving, documenting and iterating on technical experiments, and collaborating with industry professionals"},
+      tags:["Computer Vision","Crawling","Startup"], photos:["IMG_1140","IMG_1142"]
+    },
+    {
+      org:{ko:"서울대학교 교환학생",en:"Seoul National University — Exchange Student"},
+      role:{ko:"데이터 기반 사회문제 해결 과정",en:"Data-Driven Social Problem Solving"},
+      period:"2025.06 — 2025.08",
+      bullets:{
+        ko:["'데이터 기반 사회문제 해결' 과목 이수","지역 단체(관악 뿌리재단)와 협업 프로젝트 수행","토론 및 팀 기반 문제 해결 활동 참여"],
+        en:["Completed coursework in 'Data-Driven Social Problem Solving'","Collaborated on a project with a local organization (Gwanak Roots Foundation)","Participated in discussions and team-based problem-solving activities"]
+      },
+      take:{ko:"학제 간 협업 경험, 발표·소통 능력 향상, 데이터를 실제 문제에 적용하는 넓은 시야",en:"Interdisciplinary collaboration, stronger presentation and communication skills, and a broader view of applying data to real issues"},
+      tags:["SNU","Social Impact","Teamwork"], photos:["IMG_5588","IMG_1143"]
+    },
+    {
+      org:{ko:"GDGoC Sookmyung",en:"GDGoC Sookmyung"},
+      role:{ko:"Google Developer Group on Campus · 멤버",en:"Google Developer Group on Campus · Member"},
+      period:"2024.09 — 2025.03",
+      bullets:{
+        ko:["CNN, ResNet 등 딥러닝 모델을 학습하고 직접 구현","기술 스터디 세션과 프로젝트 기반 협업에 참여","이론적 지식을 소규모 AI 프로젝트에 적용"],
+        en:["Studied and implemented deep learning models (CNN, ResNet)","Participated in technical study sessions and project-based collaboration","Applied theoretical knowledge to small-scale AI projects"]
+      },
+      take:{ko:"AI·딥러닝 기초 강화, 동료 개발자와의 협업 경험, 이론을 실제 프로젝트에 적용하는 자신감",en:"Stronger AI/deep-learning foundations, collaboration with peer developers, and confidence applying theory to practice"},
+      tags:["Deep Learning","CNN · ResNet","Community"], photos:["IMG_1209","IMG_3661"]
+    },
+    {
+      org:{ko:"Qualcomm AI Program — UC San Diego",en:"Qualcomm AI Program — UC San Diego"},
+      role:{ko:"국제 AI 교육 프로그램 · 3위 수상",en:"International AI Training Program · 3rd Place"},
+      period:"2025.01 — 2025.02",
+      bullets:{
+        ko:["국제 AI 교육 프로그램 참여 (Qualcomm Institute × UCSD)","머신러닝 개념을 학습하고 실제 과제에 적용 — 중고차 가격 예측(Random Forest) 팀 프로젝트","다양한 배경의 학생들과 AI 문제를 함께 해결","프로그램 과정을 브이로그로 제작·업로드"],
+        en:["Participated in an international AI training program (Qualcomm Institute × UCSD)","Learned and applied ML concepts in practical tasks — team project predicting used-car listing prices with Random Forest","Collaborated with students from diverse backgrounds on AI-related problems","Produced and published a vlog of the program"]
+      },
+      take:{ko:"글로벌 협업 경험, 기술 아이디어를 발표·토론하는 능력, 데이터 처리와 문제 해결 역량 강화",en:"Global collaboration experience, presenting and discussing technical ideas, and stronger data-processing and problem-solving skills"},
+      tags:["Qualcomm","UCSD","Machine Learning"], photos:["IMG_0063","IMG_0137","IMG_0172"]
+    }
+  ],
+  projects: [
+    {cat:"ai",status:"done",emoji:"👚",title:{ko:"ReCloset — AI 기반 의류 의사결정 시스템",en:"ReCloset — AI-driven Clothing Decision System"},
+     desc:{ko:"업로드한 의류 이미지를 AI로 분석해 상태를 판단하고, 재활용·활용 방향을 제안하는 지속가능 패션 서비스.",en:"A sustainable-fashion service that analyzes uploaded clothing images, judges their condition, and recommends how to reuse or recycle them."},
+     tags:["Computer Vision","CNN","RoboFlow","Python"],
+     notion:"https://amber-walker-b93.notion.site/ReCloset-AI-driven-Clothing-Decision-System-33463ea5d8e98050af3cdf5fb5f74175",
+     links:[{l:"GitHub",u:"https://github.com/Re-Closet"},{l:"Demo video",u:"https://www.youtube.com/watch?v=gpX1sbQDVzY"}],
+     detail:{
+       problem:{ko:"의류 폐기 증가로 환경 문제가 심화되지만, 사용자는 옷을 버릴지 재사용할지 판단하기 어렵고 기존 서비스에는 이미지 기반 판단 기능이 부족했습니다.",en:"Clothing waste keeps growing, yet people struggle to decide whether to discard or reuse an item, and existing services lacked image-based judgment."},
+       solution:{ko:"의류 이미지를 입력받아 CNN 기반 모델로 상태를 분석하고, 결과를 바탕으로 재활용 또는 활용 방향을 제안하는 시스템을 설계했습니다.",en:"Designed a system that takes a clothing image, analyzes its condition with a CNN-based model, and suggests a reuse or recycling path."},
+       role:{ko:["의류 이미지 분석 모델 구현 및 테스트","입력 이미지 → 모델 처리 → 결과 도출 파이프라인 구성","프로젝트 흐름을 구조화한 발표 자료 제작 및 발표"],en:["Implemented and tested the clothing-image analysis model","Built the image → model → result pipeline","Structured the project story and delivered the final presentation"]},
+       result:{ko:"이미지 기반 의류 분석 기능을 구현하고 AI 모델을 실제 서비스 구조에 적용한 경험을 확보했습니다.",en:"Shipped image-based clothing analysis and gained experience putting an AI model inside a real service structure."},
+       learned:{ko:"이미지 AI 모델을 실제 문제에 적용하는 경험, 그리고 AI 결과를 사용자에게 전달하는 방식의 중요성.",en:"Applying image AI to a real problem, and how much the way results are communicated to users matters."}
+     }},
+    {cat:"ai",status:"done",emoji:"🚗",title:{ko:"장애인 주차구역 불법 주정차 감지",en:"Disabled Parking Violation Detection"},
+     desc:{ko:"YOLOv8 객체 탐지와 ROI 기반 공간 추론을 결합해 차량·주차구역·장애인 표식의 관계로 불법 주정차를 자동 판별하는 파이프라인.",en:"Combines YOLOv8 detection with ROI-based spatial reasoning to classify parking as OUTSIDE / LEGAL / ILLEGAL from vehicle, zone and disabled-sign relations."},
+     tags:["YOLOv8","OpenCV","Spatial Reasoning","Python"],
+     notion:"https://amber-walker-b93.notion.site/Disable-Parking-Project-33463ea5d8e9802fa18dfbee312df915",links:[],
+     detail:{
+       problem:{ko:"도심 불법 주정차는 교통 혼잡과 안전 문제를 일으키지만, 기존 단속은 인력 의존도가 높고 실시간 대응이 어렵습니다.",en:"Illegal parking causes congestion and safety issues, but enforcement is labor-intensive and hard to do in real time."},
+       solution:{ko:"객체 탐지 모델로 차량과 주차 금지 구역을 인식하고, ROI 내 차량 존재 여부와 차량–장애인 표식의 위치 관계로 합법/불법 여부를 판단하는 시스템을 설계했습니다.",en:"Detect vehicles and no-parking zones, then decide legality from ROI occupancy and the spatial relation between the vehicle and the disabled sign."},
+       role:{ko:["YOLOv8 기반 차량·장애인 표식 검출 모델 구성 및 실험","객체 위치 정보를 활용한 ROI 점유 판단 로직 구현","객체 간 관계 기반 의사결정(OUTSIDE / LEGAL / ILLEGAL) 로직 설계"],en:["Configured and tested YOLOv8 detection for vehicles and disabled signs","Implemented ROI occupancy logic from object positions","Designed the relation-based decision logic (OUTSIDE / LEGAL / ILLEGAL)"]},
+       result:{ko:"차량 탐지와 주차구역 인식을 통한 불법 주정차 판단 기능을 구현했습니다.",en:"Delivered a working violation-detection pipeline on top of detection results."},
+       learned:{ko:"YOLO 구조와 활용 방식, 이미지 처리 + 객체 탐지를 결합한 시스템 설계, 모델 출력 위의 rule-based 판단 로직 설계.",en:"How YOLO works in practice, designing a system that combines image processing and detection, and building rule-based decisions on model outputs."}
+     }},
+    {cat:"ai",status:"done",emoji:"🚕",title:{ko:"자율주행 경진대회 (Autocar Competition)",en:"Autocar Competition"},
+     desc:{ko:"카메라 입력으로 주행 환경을 인식하고 이동 방향과 행동을 결정하는 인식 → 판단 → 제어 자율주행 로직 구현.",en:"Perception → decision → control: camera-based environment recognition that decides the vehicle's direction and actions."},
+     tags:["Autonomous Driving","OpenCV","Real-time CV"],
+     notion:"https://amber-walker-b93.notion.site/Autocar-Competition-33463ea5d8e980bda185fa15bcb533de",links:[],
+     detail:{
+       problem:{ko:"자율주행 차량은 주변 환경을 실시간으로 인식하고 적절한 주행 판단을 내려야 하며, 단순 제어가 아닌 인식·판단·제어의 통합 시스템이 필요합니다.",en:"An autonomous car must perceive its surroundings in real time and make driving decisions — an integrated perception-decision-control system, not simple control."},
+       solution:{ko:"카메라 입력을 기반으로 주행 환경을 인식하고, 차선·경로를 바탕으로 이동 방향과 행동을 결정하는 자율주행 시스템 구조를 설계했습니다.",en:"Designed a driving system that recognizes the environment from camera input and decides direction and behavior from lanes and paths."},
+       role:{ko:["환경 인식 결과로 차량 행동을 결정하는 자율주행 알고리즘 설계·구현","OpenCV를 활용한 실시간 영상 처리 및 데이터 활용","이동 방향·동작을 결정하는 rule-based 주행 판단 로직 개발"],en:["Designed and implemented the driving algorithm that maps perception to actions","Real-time video processing with OpenCV","Developed the rule-based decision logic for direction and motion"]},
+       result:{ko:"카메라 기반 환경 인식과 주행 판단 기능을 구현하고, 실제 환경에서 동작하는 AI 시스템 설계 경험을 얻었습니다.",en:"Built camera-based perception and driving decisions, and gained experience designing an AI system that runs in the real world."},
+       learned:{ko:"실시간 CV 시스템 구현, 인식 결과를 제어 로직으로 잇는 방법, 단일 모델이 아닌 전체 시스템 흐름 설계의 중요성.",en:"Building real-time CV systems, connecting perception to control, and why whole-system design matters more than a single model."}
+     }},
+    {cat:"ai",status:"done",emoji:"🕸️",title:{ko:"BagStrap — LLM × Vision 차세대 크롤링 파이프라인",en:"BagStrap — LLM × Vision Next-gen Crawling Pipeline"},
+     desc:{ko:"LLM과 Vision 모델로 웹페이지를 '사람처럼 이해'해 URL 이해 → HTML 단순화 → 의미 태깅 → JSON 구조화까지 자동화한 end-to-end 정보 추출 시스템.",en:"An end-to-end extraction system that 'reads' web pages like a human — URL understanding → HTML simplification → semantic tagging → structured JSON — using LLM and vision models."},
+     tags:["LLM","Vision","CrewAI","Agents","Streamlit"],
+     notion:"https://amber-walker-b93.notion.site/BagStrap-Intern-33463ea5d8e9800a8412e70984a2d9b7",links:[],
+     detail:{
+       problem:{ko:"기존 HTML 크롤링은 구조 변화, SPA, 크롤링 차단으로 안정적인 추출이 어렵고, 페이지마다 구조가 달라 JSON으로 정형화하는 과정에서 오류가 잦습니다.",en:"DOM-based crawling breaks on layout changes, SPAs and blocking, and every site's structure differs, so converting to structured JSON is error-prone."},
+       solution:{ko:"URL → HTML → 의미 분석 → 구조화 → JSON 생성 전 과정을 LLM·Vision 에이전트로 자동화하고, HTML이 깨지는 페이지는 스크린샷 기반으로 정보를 추출합니다.",en:"Automated URL → HTML → semantic analysis → structuring → JSON with LLM/vision agents, falling back to screenshot-based extraction when HTML breaks."},
+       role:{ko:["HTML Simplification 모듈 구현 (LLM 친화적 구조로 변환)","Vision 기반 크롤링 실험으로 추출 안정성 개선","URL 패턴으로 페이지 유형(교수·연구실·논문 등)을 분류하는 URL 이해 에이전트 설계","계층적 Semantic Tagging 구조 설계·개선","HTML / TEXT / JSON / VISION 입력별 성능을 비교하는 Input-Bench 평가 시스템 구축","nextcrawl · summarize · input-bench 모듈 구조 설계 및 GitHub 통합 관리"],en:["Built the HTML Simplification module (LLM-friendly structure)","Ran vision-based crawling experiments to improve extraction stability","Designed the URL-understanding agent that classifies page types (professor, lab, paper…)","Designed and refined the hierarchical semantic-tagging schema","Built Input-Bench to compare performance across HTML / TEXT / JSON / VISION inputs","Structured and integrated the nextcrawl · summarize · input-bench modules on GitHub"]},
+       result:{ko:"웹페이지를 자동 수집해 JSON으로 구조화하는 end-to-end 파이프라인을 구축하고, 입력 방식에 따른 성능 차이를 정량 비교할 수 있는 평가 체계를 구현했습니다.",en:"Delivered an end-to-end pipeline that collects pages and structures them as JSON, plus an evaluation framework that quantifies performance by input type."},
+       learned:{ko:"크롤링의 한계를 LLM·Vision으로 확장하는 접근, AI를 파이프라인으로 설계하는 경험, 문제 정의 → 시스템 설계 → 실험 → 평가로 이어지는 연구 흐름.",en:"Extending crawling with LLM and vision, designing AI as a pipeline rather than a single feature, and the full research loop from problem definition to evaluation."}
+     }},
+    {cat:"ai",status:"done",emoji:"🇺🇸",title:{ko:"Qualcomm × UCSD — 중고차 가격 예측",en:"Qualcomm × UCSD — Used-Car Price Prediction"},
+     desc:{ko:"차량 속성 데이터로 중고차 가격을 예측하는 머신러닝 프로젝트. Random Forest·MLP 등 모델을 비교해 최적 모델을 도출 — Qualcomm Institute AI Development Project 3위.",en:"ML project predicting used-car prices from vehicle attributes; compared Random Forest, MLP and more to pick the best model — 3rd place, Qualcomm Institute AI Development Project."},
+     tags:["Scikit-learn","Random Forest","Feature Engineering"],
+     notion:"https://amber-walker-b93.notion.site/Qualcomm-Project-33463ea5d8e980cda085dc33120d75c5",links:[],
+     detail:{
+       problem:{ko:"중고차 가격은 연식·주행거리·연료 등 다양한 변수에 비선형적으로 좌우되어 규칙 기반 접근으로는 정확한 예측이 어렵습니다.",en:"Used-car prices depend non-linearly on many variables (age, mileage, fuel…), so rule-based approaches fall short."},
+       solution:{ko:"여러 머신러닝 회귀 모델을 적용하고 성능을 비교해 최적의 예측 모델을 선정했습니다.",en:"Applied several ML regression models, compared their performance and selected the best predictor."},
+       role:{ko:["결측치 처리, 범주형 인코딩 등 데이터 전처리 및 feature engineering","Random Forest, MLP 등 모델 적용 및 성능 비교","MAE 등 지표 기반 모델 평가 및 결과 해석","분석 과정과 결과를 구조화한 발표 자료 제작 및 발표"],en:["Preprocessing and feature engineering (missing values, categorical encoding)","Applied and compared Random Forest, MLP and other models","Evaluated with MAE and interpreted results","Structured and presented the analysis"]},
+       result:{ko:"모델별 성능 차이를 분석해 최적 모델을 도출하고, 데이터 기반 의사결정 과정을 경험했습니다.",en:"Analyzed performance differences, chose the best model and practiced data-driven decision making."},
+       learned:{ko:"전처리와 feature engineering의 중요성, 모델 선택이 결과에 미치는 영향, 비교와 분석을 통한 접근.",en:"Why preprocessing and feature engineering matter, how model choice shapes results, and the value of comparison over single-shot modeling."}
+     }},
+    {cat:"ai",status:"wip",emoji:"🌺",title:{ko:"DTS 프로젝트",en:"DTS Project"},
+     desc:{ko:"하와이 DTS 경험에서 출발한 진행 중인 프로젝트. 곧 업데이트됩니다.",en:"An in-progress project that grew out of the DTS experience in Hawaii. Coming soon."},
+     tags:["In progress"],notion:"https://amber-walker-b93.notion.site/DTS-Project-33563ea5d8e9804dbf64c9abb1af45bb",links:[],detail:null},
+    {cat:"data",status:"done",emoji:"💹",title:{ko:"서울 상권 분석 & Tableau 시각화",en:"Seoul Commercial Area Analysis & Tableau Visualization"},
+     desc:{ko:"서울 상권 데이터를 탐색·분석하고, 핵심 지표 기반 인터랙티브 대시보드로 데이터 스토리텔링을 구현한 Tableau 프로젝트.",en:"Explored Seoul commercial-district data and built an interactive Tableau dashboard that tells the story behind the key metrics."},
+     tags:["Tableau","Data Analysis","Visualization"],
+     notion:"https://amber-walker-b93.notion.site/Seoul-Commercial-Area-Analysis-Tableu-Visualization-33463ea5d8e9802e9136ca16dd6a8042",links:[],
+     detail:{
+       problem:{ko:"데이터는 있지만 수치 나열만으로는 의미 있는 인사이트를 도출하거나 전달하기 어렵습니다.",en:"The data existed, but raw numbers alone could not surface or communicate meaningful insight."},
+       solution:{ko:"Tableau로 데이터를 시각적으로 분석하고 핵심 지표 기반 대시보드를 구성해 데이터의 흐름과 패턴을 직관적으로 전달했습니다.",en:"Analyzed the data visually in Tableau and built a metric-driven dashboard that conveys flow and patterns at a glance."},
+       role:{ko:["데이터 구조 이해 및 분석용 전처리","사용자 중심의 Tableau 대시보드 설계·구현","패턴 분석을 통한 인사이트 도출 및 해석"],en:["Understood the data structure and preprocessed it for analysis","Designed and built a user-centered Tableau dashboard","Extracted and interpreted insights from patterns"]},
+       result:{ko:"직관적으로 이해할 수 있는 대시보드를 구현하고 데이터 기반 의사결정을 지원할 수 있는 결과를 도출했습니다.",en:"Delivered an intuitive dashboard that supports data-driven decisions."},
+       learned:{ko:"시각화의 전달력, 사용자 관점에서 분석 결과를 표현하는 방법, 데이터를 '스토리'로 만드는 경험.",en:"The power of visualization, presenting results from the user's point of view, and turning data into a story."}
+     }},
+    {cat:"data",status:"done",emoji:"⚡",title:{ko:"AWS 스마트팩토리 전력·탄소 예측",en:"AWS SmartFactory Electricity & Carbon Prediction"},
+     desc:{ko:"AWS(S3·SageMaker)에서 대용량 시계열을 처리하고 ARIMA·LSTM으로 전력 사용량·요금·탄소 배출량을 예측, Streamlit 대시보드까지 잇는 end-to-end 시스템.",en:"Processes large time-series data on AWS (S3, SageMaker), forecasts energy use, cost and carbon emissions with ARIMA/LSTM, and serves results in a Streamlit dashboard."},
+     tags:["AWS SageMaker","LSTM · ARIMA","PyTorch","Streamlit"],
+     notion:"https://amber-walker-b93.notion.site/AWS-SmartFactory-Electronic-Prediction-Project-33463ea5d8e980ce9ab2e0e36edddc9c",links:[],
+     detail:{
+       problem:{ko:"공장 단위 전력 데이터는 대용량 시계열이라 처리가 어렵고, 비용과 탄소 배출량까지 함께 고려해야 하며 실시간 모니터링·이상 탐지가 어렵습니다.",en:"Factory-level power data is large time-series data; cost and carbon must be considered together, and real-time monitoring is hard."},
+       solution:{ko:"S3·SageMaker 기반 처리 환경을 구축하고 시계열 전처리·feature engineering 후 ARIMA·LSTM으로 예측, SageMaker Endpoint로 서빙하고 Streamlit으로 시각화했습니다.",en:"Built an S3/SageMaker pipeline, engineered time-series features, forecast with ARIMA and LSTM, served via a SageMaker endpoint and visualized in Streamlit."},
+       role:{ko:["클라우드 환경에서 대용량 시계열 데이터 수집·활용","시간 흐름에 따른 패턴 분석 및 모델 입력 데이터 구성","예측 결과를 전달하는 Streamlit 대시보드 구현"],en:["Collected and used large time-series data in the cloud","Analyzed temporal patterns and built model inputs","Implemented the Streamlit dashboard that presents forecasts"]},
+       result:{ko:"전력·요금·탄소 배출량을 통합 예측하는 시스템을 구축하고(MAE 약 65), 데이터 → 모델 → 배포 → 시각화 파이프라인을 완성했습니다.",en:"Built an integrated forecasting system (MAE ≈ 65) with a full data → model → deploy → visualize pipeline."},
+       learned:{ko:"클라우드 기반 대용량 처리, 시계열 예측 모델 설계, AI 모델을 실제 서비스 형태로 연결하는 경험.",en:"Cloud-scale data handling, designing time-series forecasters, and wiring a model into a real service."}
+     }},
+    {cat:"data",status:"done",emoji:"👥",title:{ko:"We-meet — 대학생 × 공익단체 매칭 플랫폼",en:"We-meet — Student × Nonprofit Matching Platform"},
+     desc:{ko:"설문과 실제 수요 데이터를 바탕으로 관심사·전공 기반 추천(Jaccard 태그 유사도 + 키워드 매칭)으로 대학생과 공익단체를 연결하는 플랫폼 프로토타입.",en:"A prototype that matches students with nonprofits using interest/major-based recommendations (Jaccard tag similarity + keyword matching) built from survey and demand data."},
+     tags:["Recommendation","Jaccard","JSON","HTML/CSS/JS"],
+     notion:"https://amber-walker-b93.notion.site/We-meet-Project-33463ea5d8e9805b9c67d5b957633ff4",
+     links:[{l:"GitHub",u:"https://github.com/wis-hyun/We-meet-Project"}],
+     detail:{
+       problem:{ko:"대학생은 실무 경험이, 공익단체는 인력이 부족합니다. 양측 모두 수요는 있지만 연결 구조가 없었습니다.",en:"Students lack hands-on experience; nonprofits lack people. Both sides have demand but no bridge."},
+       solution:{ko:"관심사 기반 추천, 태그 유사도 분석, 텍스트 키워드 매칭, 탐색형 카드 UI를 결합한 맞춤형 공익활동 추천 플랫폼을 설계했습니다.",en:"Designed a personalized recommendation platform combining interest-based suggestions, tag similarity, keyword matching and an explorable card UI."},
+       role:{ko:["설문조사 설계 및 데이터 수집, 사용자 니즈 분석과 문제 정의","유사도 + 키워드 기반 추천 알고리즘 설계","JSON 기반 데이터 구조 설계","HTML/CSS/JS 프론트엔드 UI 구현 및 플랫폼 기획"],en:["Designed the survey, collected data, analyzed needs and defined the problem","Designed the similarity + keyword recommendation algorithm","Designed the JSON data structure","Built the HTML/CSS/JS front end and planned the platform"]},
+       result:{ko:"공익활동 매칭 플랫폼 프로토타입과 사용자 맞춤 추천 기능을 구현했습니다.",en:"Shipped a working prototype with personalized recommendations."},
+       learned:{ko:"데이터 기반 문제 정의와 해결, 추천 시스템 설계, 사용자 중심 서비스 기획.",en:"Data-driven problem definition, recommender design, and user-centered product planning."}
+     }},
+    {cat:"data",status:"done",emoji:"🪦",title:{ko:"수도권 화장시설 건립 입지분석",en:"Site Analysis for Crematorium Facilities in the Seoul Metro Area"},
+     desc:{ko:"공공데이터와 GIS 공간 분석으로 법적 거리 기준·NIMBY 요소까지 반영한 다중 기준 입지 적합도 평가. 약 30개 후보지 중 최종 2곳 도출, Kakao Map 인터랙티브 시각화.",en:"Multi-criteria site-suitability analysis with public data and GIS, reflecting legal distance rules and NIMBY factors; narrowed ~30 candidates to 2 and visualized them on an interactive Kakao Map."},
+     tags:["GeoPandas","Shapely","GIS","Kakao Map API"],
+     notion:"https://amber-walker-b93.notion.site/33463ea5d8e98047ba22fbd3ca30101b",links:[],
+     detail:{
+       problem:{ko:"인구의 약 50%가 몰린 수도권에 화장시설이 부족해 장례 지연과 비용 증가가 발생하고, 혐오시설 인식 때문에 입지 선정 시 지역 갈등(NIMBY)이 생깁니다.",en:"Half of Korea's population lives in the metro area, yet crematoria are scarce — causing funeral delays and costs — and siting triggers NIMBY conflicts."},
+       solution:{ko:"법적 기준(주거지·학교 500m, 도로·하천 300m) 버퍼와 인구·사망자 수·시설 분포 레이어를 결합한 다중 기준 분석으로 정규화·가중치 기반 적합도 점수를 산출했습니다.",en:"Combined legal buffers (500 m from housing/schools, 300 m from roads/rivers) with population, mortality and facility layers into a normalized, weighted suitability score."},
+       role:{ko:["통계청·서울시·국토정보 등 공공데이터 수집 및 정제","GeoPandas·Shapely로 buffer 생성 및 overlay 연산 구현","거리 제한을 반영한 입지 가능 영역 도출 및 적합도 평가 모델 설계","Kakao Map API 기반 웹 지도 시각화 구현"],en:["Collected and cleaned public datasets (KOSTAT, Seoul, national geo data)","Implemented buffer and overlay operations with GeoPandas/Shapely","Derived feasible zones under distance rules and designed the suitability model","Built the web map visualization with the Kakao Map API"]},
+       result:{ko:"남양주시 수동면을 최적 입지 후보로 도출하고, 약 30개 후보지 중 조건을 만족하는 최종 2곳을 선정해 타당성을 정량·공간적으로 설명했습니다.",en:"Identified Sudong-myeon (Namyangju) as the top candidate and narrowed ~30 sites to 2 with quantitative, spatial justification."},
+       learned:{ko:"GIS 분석의 실제 적용, 법적·사회적 조건을 반영한 의사결정 모델 설계, 데이터 기반 정책 제안으로 확장하는 문제 해결.",en:"Applying GIS for real decisions, modeling legal and social constraints, and extending analysis into policy proposals."}
+     }}
+  ],
+  awards: [
+    {place:2,title:{ko:"데이터 분석 & 시각화 — 2위",en:"Data Analysis & Visualization — 2nd Place"},org:{ko:"빅데이터 산업진흥 서포터즈",en:"Big-Data Industry Supporter"},date:"2026.01"},
+    {place:2,title:{ko:"OUTSTANDERS 프로젝트 인턴 — 2위",en:"'OUTSTANDERS' Project Intern — 2nd Place"},org:{ko:"OUTSTANDERS 산학협력",en:"OUTSTANDERS industry-academic program"},date:"2025.12"},
+    {place:2,title:{ko:"AI 데이터 분석 프로젝트 — 2위",en:"AI Data Analysis Project — 2nd Place"},org:{ko:"AI 데이터 분석 경진",en:"AI data analysis competition"},date:"2025.05"},
+    {place:3,title:{ko:"Qualcomm Institute AI Development Project — 3위",en:"Qualcomm Institute AI Development Project — 3rd Place"},org:{ko:"Qualcomm Institute × UC San Diego",en:"Qualcomm Institute × UC San Diego"},date:"2025.02"},
+    {place:2,title:{ko:"OUTTA AI 프로젝트 — 2위",en:"OUTTA AI Project — 2nd Place"},org:{ko:"OUTTA",en:"OUTTA"},date:"2024.08"}
+  ],
+  certs: [
+    {abbr:"AZ-900",name:"Microsoft Certified: Azure Fundamentals",issuer:"Microsoft",date:"2026.02",tag:"Cloud"},
+    {abbr:"AI-900",name:"Microsoft Certified: Azure AI Fundamentals",issuer:"Microsoft",date:"2026.02",tag:"AI"},
+    {abbr:"AIF",name:"AWS Certified AI Practitioner",issuer:"Amazon Web Services",date:"2025.04",tag:"AI"},
+    {abbr:"KNIME",name:"KNIME Certified",issuer:"KNIME AG",date:"—",tag:"Tool"}
+  ],
+  skills: [
+    {h:{ko:"메인 스택",en:"Main stack"},lv:[["Python",5],["PyTorch",4],["Data preprocessing",4],["Pandas · NumPy",4],["SQL",3]]},
+    {h:{ko:"AI / ML",en:"AI / ML"},chips:["CNN · ResNet","YOLO · OpenCV","LLM Prompting & Evaluation","Scikit-learn","Hugging Face","Random Forest"]},
+    {h:{ko:"데이터 & 클라우드",en:"Data & Cloud"},chips:["AWS","Azure","Tableau","KNIME","Crawling","GIS / Spatial"]},
+    {h:{ko:"강점",en:"Strengths"},chips:{ko:["협업 & 소통 능력","문제 정의 및 단순화","기록 및 정리 능력","열정 및 성실함","영어 커뮤니케이션"],en:["Collaboration & communication","Problem definition & simplification","Documentation & organization","Passion & diligence","English communication"]}}
+  ],
+  updated:"2026.11"
+};
+/* ===================================================================== */
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const bi=o=>`<span class="ko">${o.ko}</span><span class="en">${o.en}</span>`;
+let LANG='ko';
+
+/* ---------- Language ---------- */
+function setLang(l){
+  LANG=l; document.documentElement.lang=l; document.documentElement.dataset.lang=l;
+  $$('[data-ko]').forEach(e=>e.textContent=e.dataset[l]);
+  $$('#langBtn .seg').forEach(s=>s.classList.toggle('on',s.dataset.l===l));
+  try{localStorage.setItem('sh-lang',l)}catch(e){}
+  restartTypewriter();
+}
+$('#langBtn').addEventListener('click',()=>setLang(LANG==='ko'?'en':'ko'));
+
+/* ---------- Theme ---------- */
+function setTheme(dark){
+  document.documentElement.dataset.theme=dark?'dark':'light';
+  $('.ic-moon').style.display=dark?'none':'';$('.ic-sun').style.display=dark?'':'none';
+  document.querySelector('meta[name=theme-color]').content=dark?'#0c0c0e':'#ffffff';
+  try{localStorage.setItem('sh-theme',dark?'dark':'light')}catch(e){}
+}
+$('#themeBtn').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme!=='dark'));
+
+/* ---------- Typewriter ---------- */
+let twTimer;
+function restartTypewriter(){
+  clearTimeout(twTimer); const el=$('#tw'); const list=DATA.roles[LANG]; let i=0,c=0,del=false;
+  (function tick(){
+    const cur=list[i];
+    if(!del){ el.textContent=cur.slice(0,++c); if(c===cur.length){del=true;twTimer=setTimeout(tick,2400);return;} }
+    else{ el.textContent=cur.slice(0,--c); if(c===0){del=false;i=(i+1)%list.length;} }
+    twTimer=setTimeout(tick,del?28:55);
+  })();
+}
+
+/* ---------- Marquee ---------- */
+(()=>{const t=$('#marquee');const items=[...DATA.marquee,...DATA.marquee];t.innerHTML=items.map(x=>`<span>${esc(x)}</span>`).join('');})();
+
+/* ---------- Interests ---------- */
+$('#interests').innerHTML=DATA.interests.map(x=>`<div class="int"><i>${x.k}</i>${esc(x.n)}</div>`).join('');
+
+/* ---------- Stats (count-up) ---------- */
+$('#stats').innerHTML=DATA.stats.map((s,i)=>`<div class="stat"><div class="n"><span class="cnt" data-n="${s.n}" data-dec="${s.dec||0}" data-pre="${s.pre||''}">${s.pre||''}0</span><small>${s.suf||''}</small></div><div class="l">${bi(s)}</div></div>`).join('');
+function countUp(el){
+  const n=+el.dataset.n,dec=+el.dataset.dec,pre=el.dataset.pre;const t0=performance.now(),dur=1400;
+  (function f(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=pre+(n*e).toFixed(dec);if(p<1)requestAnimationFrame(f);})(t0);
+}
+
+/* ---------- Experience ---------- */
+const PH=id=>({thumb:`assets/thumbs/${id}.jpg`,full:`assets/photos/${id}.jpg`});
+$('#timeline').innerHTML=DATA.experience.map((e,i)=>{
+  const gal=e.photos.length?`<div class="gal" data-exp="${i}">${e.photos.map((p,j)=>`<button type="button" data-idx="${j}" aria-label="Photo ${j+1}"><img src="${PH(p).thumb}" alt="" loading="lazy" width="520" height="520"></button>`).join('')}</div>`:'';
+  return `<div class="tl-item" id="exp-${i}">
+    <div class="tl-card">
+      <button class="tl-head" type="button" aria-expanded="false" aria-controls="exp-body-${i}">
+        <div><div class="org">${bi(e.org)}</div><div class="role">${bi(e.role)}</div></div>
+        <div class="period">${e.period}</div>
+        <div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="tl-body" id="exp-body-${i}"><div><div class="tl-in">
+        <div>
+          <ul>${e.bullets.ko.map((b,j)=>`<li><span class="ko">${b}</span><span class="en">${e.bullets.en[j]}</span></li>`).join('')}</ul>
+          <div class="takeaway"><b>Key takeaways</b>${bi(e.take)}</div>
+          <div class="tl-tags">${e.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+          ${e.link?`<a class="proj-link" style="margin-top:14px" href="${e.link.u}" target="_blank" rel="noopener"><span>${esc(e.link.l)}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>`:''}
+        </div>
+        ${gal}
+      </div></div></div>
+    </div></div>`;
+}).join('');
+$$('.tl-head').forEach(h=>h.addEventListener('click',()=>{const it=h.closest('.tl-item');const o=it.classList.toggle('open');h.setAttribute('aria-expanded',o);}));
+document.getElementById('exp-0').classList.add('open');$('#exp-0 .tl-head').setAttribute('aria-expanded','true');
+
+/* ---------- Lightbox ---------- */
+let lbSet=[],lbI=0;
+const lb=$('#lb'),lbImg=$('#lbImg'),lbCap=$('#lbCap');
+function openLb(set,i){lbSet=set;lbI=i;showLb();lb.classList.add('open');document.body.style.overflow='hidden';}
+function showLb(){lbImg.src=lbSet[lbI].full;lbCap.textContent=`${lbSet[lbI].label} · ${lbI+1} / ${lbSet.length}`;}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+$$('.gal').forEach(g=>{
+  const e=DATA.experience[+g.dataset.exp];
+  const set=e.photos.map(p=>({...PH(p),label:e.org.en}));
+  g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>openLb(set,+b.dataset.idx)));
+});
+$('#lbX').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+$('#lbPrev').addEventListener('click',()=>{lbI=(lbI-1+lbSet.length)%lbSet.length;showLb();});
+$('#lbNext').addEventListener('click',()=>{lbI=(lbI+1)%lbSet.length;showLb();});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')$('#lbPrev').click();if(e.key==='ArrowRight')$('#lbNext').click();});
+
+/* ---------- Projects ---------- */
+const cats=[{k:'all',ko:'전체',en:'All'},{k:'ai',ko:'AI / ML',en:'AI / ML'},{k:'data',ko:'빅데이터',en:'Big Data'}];
+$('#filters').innerHTML=cats.map(c=>{const n=c.k==='all'?DATA.projects.length:DATA.projects.filter(p=>p.cat===c.k).length;return `<button class="filter${c.k==='all'?' on':''}" data-f="${c.k}">${bi(c)}<span class="c">${n}</span></button>`}).join('');
+const EXT=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>`;
+$('#projGrid').innerHTML=DATA.projects.map((p,i)=>`<article class="proj" data-cat="${p.cat}" data-i="${i}">
+  <div class="proj-top"><span class="proj-num">${String(i+1).padStart(2,'0')} / ${p.cat.toUpperCase()}</span><span class="status ${p.status}">${p.status==='done'?'Done':'In progress'}</span></div>
+  <div class="proj-emo">${p.emoji||''}</div>
+  <h3>${bi(p.title)}</h3><p>${bi(p.desc)}</p>
+  <div class="proj-tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>
+  <div class="proj-actions">
+    ${p.detail?`<button class="proj-link open-proj" type="button" data-i="${i}"><span class="ko">자세히 보기</span><span class="en">Case study</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>`:''}
+    ${p.links.map(l=>`<a class="proj-link sub" href="${l.u}" target="_blank" rel="noopener"><span>${esc(l.l)}</span>${EXT}</a>`).join('')}
+  </div>
+</article>`).join('');
+
+/* ---------- Project modal ---------- */
+const pm=$('#pm'),pmBody=$('#pmBody');
+function openProj(i){
+  const p=DATA.projects[i],d=p.detail;if(!d)return;
+  const sec=(k,label,v,list)=>`<div class="pm-sec"><h4>${label}</h4>${list?`<ul>${v[LANG].map(x=>`<li>${x}</li>`).join('')}</ul>`:`<p>${v[LANG]}</p>`}</div>`;
+  pmBody.innerHTML=`
+    <div class="pm-head">
+      <div class="pm-emo">${p.emoji||''}</div>
+      <div><div class="pm-kicker">${p.cat==='ai'?'AI / ML':'Big Data'} · <span class="status ${p.status}">${p.status==='done'?'Done':'In progress'}</span></div>
+      <h3>${p.title[LANG]}</h3><p class="pm-lead">${p.desc[LANG]}</p></div>
+    </div>
+    <div class="pm-tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>
+    <div class="pm-grid">
+      ${sec('problem',LANG==='ko'?'문제':'Problem',d.problem)}
+      ${sec('solution',LANG==='ko'?'해결':'Solution',d.solution)}
+    </div>
+    ${sec('role',LANG==='ko'?'내가 한 일':'My contribution',d.role,true)}
+    <div class="pm-grid">
+      ${sec('result',LANG==='ko'?'결과':'Result',d.result)}
+      ${sec('learned',LANG==='ko'?'배운 점':'What I learned',d.learned)}
+    </div>
+    <div class="pm-links">
+      ${p.notion?`<a class="btn btn-solid" href="${p.notion}" target="_blank" rel="noopener"><span>${LANG==='ko'?'Notion에서 전체 기록 보기':'Full write-up on Notion'}</span>${EXT}</a>`:''}
+      ${p.links.map(l=>`<a class="btn btn-line" href="${l.u}" target="_blank" rel="noopener"><span>${esc(l.l)}</span>${EXT}</a>`).join('')}
+    </div>`;
+  pm.classList.add('open');document.body.style.overflow='hidden';pm.querySelector('.pm-card').scrollTop=0;$('#pmX').focus();
+}
+function closeProj(){pm.classList.remove('open');document.body.style.overflow='';}
+$$('.open-proj').forEach(b=>b.addEventListener('click',()=>openProj(+b.dataset.i)));
+$('#pmX').addEventListener('click',closeProj);
+pm.addEventListener('click',e=>{if(e.target===pm)closeProj();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pm.classList.contains('open'))closeProj();});
+$$('.filter').forEach(b=>b.addEventListener('click',()=>{
+  $$('.filter').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  $$('.proj').forEach(c=>{const show=b.dataset.f==='all'||c.dataset.cat===b.dataset.f;c.classList.toggle('hide',!show);if(show){c.style.animation='none';c.offsetHeight;c.style.animation='';}});
+}));
+
+/* ---------- Awards / certs ---------- */
+$('#awList').innerHTML=DATA.awards.map(a=>`<div class="aw"><div class="medal${a.place===2?' g':''}">${a.place}<sup style="font-size:.55em">${a.place===2?'nd':'rd'}</sup></div><div><div class="t">${bi(a.title)}</div><div class="o">${bi(a.org)}</div></div><div class="d">${a.date}</div></div>`).join('');
+$('#certGrid').innerHTML=DATA.certs.map(c=>`<div class="cert"><div class="ci">${esc(c.abbr)}</div><div class="cn">${esc(c.name)}</div><div class="cm"><span>${esc(c.issuer)} · ${esc(c.tag)}</span><code>${c.date}</code></div></div>`).join('');
+
+/* ---------- Skills ---------- */
+$('#skillGrid').innerHTML=DATA.skills.map(s=>{
+  let body='';
+  if(s.lv) body=`<ul>${s.lv.map(([n,l])=>`<li><span>${esc(n)}</span><span class="lvl" aria-label="${l} of 5">${[1,2,3,4,5].map(i=>`<i class="${i<=l?'on':''}"></i>`).join('')}</span></li>`).join('')}</ul>`;
+  else if(Array.isArray(s.chips)) body=`<div class="chips">${s.chips.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`;
+  else body=`<div class="chips ko">${s.chips.ko.map(c=>`<span>${esc(c)}</span>`).join('')}</div><div class="chips en">${s.chips.en.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`;
+  return `<div class="skill"><h3>${bi(s.h)}</h3>${body}</div>`;
+}).join('');
+
+/* ---------- Copy email / toast ---------- */
+const toast=$('#toast');let toastT;
+function showToast(m){toast.textContent=m;toast.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>toast.classList.remove('show'),2200);}
+$('#copyMail').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('smwuai2004@gmail.com');showToast(LANG==='ko'?'이메일 주소를 복사했어요 ✓':'Email copied ✓');}catch(e){showToast('smwuai2004@gmail.com');}});
+
+/* ---------- Nav: scroll state, active link, burger ---------- */
+const nav=$('#nav'),links=$$('.nav-links a'),secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const topBtn=$('#top'),prog=$('#progress');
+function onScroll(){
+  const y=scrollY;nav.classList.toggle('scrolled',y>8);topBtn.classList.toggle('show',y>700);
+  const h=document.documentElement;prog.style.width=(y/(h.scrollHeight-h.clientHeight)*100)+'%';
+  let cur=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<=innerHeight*.4)cur=i;});
+  links.forEach((a,i)=>a.classList.toggle('active',i===cur));
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+topBtn.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const burger=$('#burger'),navLinks=$('#navLinks');
+burger.addEventListener('click',()=>{const o=navLinks.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+links.forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* ---------- Reveal on scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+  e.target.querySelectorAll('.cnt').forEach(countUp);
+  const g=e.target.querySelector('#gpaBar');if(g)g.style.width=g.dataset.w+'%';
+  io.unobserve(e.target);}),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+/* safety net: if an observer never fires, reveal everything after a moment */
+setTimeout(()=>{$$('.rv:not(.in)').forEach(el=>{if(el.getBoundingClientRect().top<innerHeight){el.classList.add('in');el.querySelectorAll('.cnt').forEach(countUp);const g=el.querySelector('#gpaBar');if(g)g.style.width=g.dataset.w+'%';}});},2500);
+
+/* ---------- Init ---------- */
+$('#updated').textContent=DATA.updated;
+(()=>{let l,t;try{l=localStorage.getItem('sh-lang');t=localStorage.getItem('sh-theme')}catch(e){}
+  setTheme(t==='dark');
+  setLang(l==='en'?'en':(l==='ko'?'ko':(navigator.language||'ko').startsWith('ko')?'ko':'en'));
+})();
+</script>
+</body>
+</html>
